@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerConnect - Job Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="#" onclick="showPage('home');return false;">Career<span>Connect</span></a>
+  <nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('jobs')">Jobs</a>
+    <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('contact')">Contact</a>
+  </nav>
+  <button class="nav-button" onclick="showPage('application')">Apply Now</button>
+</header>
+
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <div class="hero-text">
+      <p class="tag">YOUR CAREER STARTS HERE</p>
+      <h1>Find a job that<br><span>fits your future.</span></h1>
+      <p class="sub">Explore opportunities, discover your potential, and take the next step in your career.</p>
+      <div class="searchbar"><input id="homeSearch" placeholder="Job title or keyword"><button onclick="searchFromHome()">Search Jobs</button></div>
+      <div class="stats"><div><b>500+</b><small>Job openings</small></div><div><b>100+</b><small>Companies</small></div><div><b>1,000+</b><small>Job seekers</small></div></div>
+    </div>
+    <div class="hero-card"><div class="circle">💼</div><h3>Your next opportunity</h3><p>One search can change your future.</p><div class="mini-job">💻 &nbsp; Frontend Developer <span>New</span></div><div class="mini-job">📊 &nbsp; Data Analyst <span>New</span></div><div class="mini-job">🎨 &nbsp; UI Designer <span>New</span></div></div>
+  </div>
+  <div class="section"><h2>Popular Career Fields</h2><p class="muted">Explore jobs in your favorite field.</p><div class="category-grid">
+  <div class="category">💻<h3>Technology</h3><p>Software, IT & development</p></div><div class="category">📊<h3>Data & Analytics</h3><p>Data analyst and research</p></div><div class="category">🎨<h3>Design</h3><p>UI, UX and creative jobs</p></div><div class="category">📢<h3>Marketing</h3><p>Marketing and communication</p></div></div></div>
+  <div class="cta"><h2>Ready to find your dream job?</h2><p>Browse openings and apply to a role that matches your skills.</p><button onclick="showPage('jobs')">Explore Jobs →</button></div>
+</section>
+
+<section id="jobs" class="page">
+  <div class="page-banner"><p class="tag">CAREER OPPORTUNITIES</p><h1>Explore available jobs</h1><p>Find roles that match your skills and interests.</p></div>
+  <div class="section"><div class="searchbar"><input id="jobSearch" placeholder="Search job title..." oninput="filterJobs()"><button onclick="filterJobs()">Search</button></div>
+  <div id="jobList" class="job-grid">\n    <div class="job-card"><span class="job-icon">💻</span><h3>Frontend Developer</h3><p>TechNova Solutions</p><div class="chips">Full Time · Jaipur, Rajasthan · ₹4–6 LPA</div><p>Build responsive websites using HTML, CSS and JavaScript.</p><button onclick="applyFor('Frontend Developer')">Apply Now</button></div>\n    <div class="job-card"><span class="job-icon">📊</span><h3>Data Analyst</h3><p>InsightWorks</p><div class="chips">Full Time · Bengaluru, Karnataka · ₹6–9 LPA</div><p>Analyze datasets and prepare business reports.</p><button onclick="applyFor('Data Analyst')">Apply Now</button></div>\n    <div class="job-card"><span class="job-icon">🎨</span><h3>UI/UX Designer</h3><p>PixelCraft Studio</p><div class="chips">Full Time · Delhi, India · ₹5–8 LPA</div><p>Create user-friendly interfaces and design prototypes.</p><button onclick="applyFor('UI/UX Designer')">Apply Now</button></div>\n    <div class="job-card"><span class="job-icon">📱</span><h3>App Developer Intern</h3><p>NextGen Apps</p><div class="chips">Internship · Remote · ₹15,000/month</div><p>Assist with mobile app development and testing.</p><button onclick="applyFor('App Developer Intern')">Apply Now</button></div>\n    <div class="job-card"><span class="job-icon">📢</span><h3>Digital Marketing Intern</h3><p>BrightMedia</p><div class="chips">Internship · Jaipur, Rajasthan · ₹12,000/month</div><p>Support social media campaigns and online marketing.</p><button onclick="applyFor('Digital Marketing Intern')">Apply Now</button></div>\n    <div class="job-card"><span class="job-icon">🧑‍💼</span><h3>HR Assistant</h3><p>PeopleFirst Group</p><div class="chips">Full Time · Mumbai, Maharashtra · ₹3–5 LPA</div><p>Help with recruitment, interviews and employee records.</p><button onclick="applyFor('HR Assistant')">Apply Now</button></div>\n    <div class="job-card"><span class="job-icon">🛠️</span><h3>Backend Developer</h3><p>CloudStack Labs</p><div class="chips">Full Time · Hyderabad, Telangana · ₹7–11 LPA</div><p>Develop APIs and server-side application features.</p><button onclick="applyFor('Backend Developer')">Apply Now</button></div>\n    <div class="job-card"><span class="job-icon">🔐</span><h3>Cybersecurity Intern</h3><p>SecureNet</p><div class="chips">Internship · Pune, Maharashtra · ₹18,000/month</div><p>Assist in security testing and vulnerability reviews.</p><button onclick="applyFor('Cybersecurity Intern')">Apply Now</button></div>\n    <div class="job-card"><span class="job-icon">🧪</span><h3>QA Tester</h3><p>QualityFirst</p><div class="chips">Full Time · Noida, Uttar Pradesh · ₹3.5–5.5 LPA</div><p>Test applications and report software bugs.</p><button onclick="applyFor('QA Tester')">Apply Now</button></div>\n    <div class="job-card"><span class="job-icon">☁️</span><h3>Cloud Support Associate</h3><p>SkyCloud Services</p><div class="chips">Full Time · Gurugram, Haryana · ₹4–7 LPA</div><p>Support cloud services and troubleshoot technical issues.</p><button onclick="applyFor('Cloud Support Associate')">Apply Now</button></div>\n    <div class="job-card"><span class="job-icon">✍️</span><h3>Content Writer</h3><p>WordNest Media</p><div class="chips">Full Time · Remote · ₹3–4.5 LPA</div><p>Write articles, blogs and website content.</p><button onclick="applyFor('Content Writer')">Apply Now</button></div>\n    <div class="job-card"><span class="job-icon">🎓</span><h3>Python Developer Intern</h3><p>CodeSpring</p><div class="chips">Internship · Jaipur, Rajasthan · ₹10,000/month</div><p>Work on beginner-friendly Python projects and scripts.</p><button onclick="applyFor('Python Developer Intern')">Apply Now</button></div>\n  </div>iv><p id="noJobs" class="muted" style="display:none">No jobs found. Try another keyword.</p></div>
+</section>
+
+<section id="about" class="page">
+  <div class="page-banner"><p class="tag">ABOUT US</p><h1>Connecting talent with opportunity</h1><p>We make job searching simple for students and professionals.</p></div>
+  <div class="section about-layout"><div><h2>Who we are</h2><p>CareerConnect is a student-friendly job portal concept designed to bring job seekers and employers together in one place. Our goal is to make discovering opportunities easy and accessible.</p><p>Whether you are looking for your first internship or your next full-time role, CareerConnect helps you explore openings and apply with confidence.</p><button onclick="showPage('jobs')">Browse Jobs</button></div><div class="about-box"><div>🎯 <b>Our Mission</b><p>Help every job seeker discover the right opportunity.</p></div><div>🌱 <b>Our Vision</b><p>Build a simple and accessible career platform.</p></div><div>🤝 <b>Our Values</b><p>Learning, growth, trust and opportunity.</p></div></div></div>
+  <div class="section"><h2>Why CareerConnect?</h2><div class="category-grid"><div class="category">🔎<h3>Easy Search</h3><p>Find relevant roles quickly.</p></div><div class="category">📄<h3>Simple Apply</h3><p>Submit your details in a few steps.</p></div><div class="category">🚀<h3>Career Growth</h3><p>Discover internships and jobs.</p></div><div class="category">📍<h3>More Choices</h3><p>Explore different fields and locations.</p></div></div></div>
+</section>
+
+<section id="contact" class="page">
+  <div class="page-banner"><p class="tag">GET IN TOUCH</p><h1>We would love to hear from you</h1><p>Have a question or suggestion? Send us a message.</p></div>
+  <div class="section contact-layout"><div class="contact-info"><h2>Contact Information</h2><p>Reach out to the CareerConnect team for help or feedback.</p><div class="info-item">📧 <div><b>Email</b><p>support@careerconnect.example</p></div></div><div class="info-item">📍 <div><b>Location</b><p>Jaipur, Rajasthan, India</p></div></div><div class="info-item">🕘 <div><b>Working Hours</b><p>Monday – Friday, 9 AM – 5 PM</p></div></div></div>
+  <form class="form-card" id="contactForm"><h2>Send a Message</h2><label>Your Name</label><input required placeholder="Enter your name"><label>Email Address</label><input type="email" required placeholder="Enter your email"><label>Subject</label><input required placeholder="Message subject"><label>Message</label><textarea required rows="5" placeholder="Write your message..."></textarea><button type="submit">Send Message</button><p id="contactMessage" class="success"></p></form></div>
+</section>
+
+<section id="application" class="page">
+  <div class="page-banner"><p class="tag">APPLICATION FORM</p><h1>Take the next step</h1><p>Fill in your details to submit a demo job application.</p></div>
+  <div class="section application-layout"><div class="application-note"><h2>Apply with confidence ✨</h2><p>Complete the form carefully. This is a frontend project demo, so your information is not sent to a real company.</p><ul><li>Use a valid email address</li><li>Choose the job you want</li><li>Keep your resume ready</li></ul></div><form class="form-card" id="applicationForm"><h2>Job Application</h2><label>Full Name</label><input required placeholder="Your full name"><label>Email Address</label><input type="email" required placeholder="you@example.com"><label>Phone Number</label><input required type="tel" placeholder="Your phone number"><label>Position</label><input id="selectedJob" required placeholder="Select a job from Jobs page"><label>Resume (file name)</label><input placeholder="Resume.pdf"><label>Why are you suitable for this role?</label><textarea rows="4" placeholder="Write a short message"></textarea><button type="submit">Submit Application</button><p id="applicationMessage" class="success"></p></form></div>
+</section>
+</main>
+<footer><div class="logo">Career<span>Connect</span></div><p>Find opportunities. Build your future.</p><p>© 2026 CareerConnect · Student Project</p></footer>
+<script src="script.js"></script>
+</body></html>
